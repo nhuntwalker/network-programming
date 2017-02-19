@@ -28,7 +28,26 @@ def server(interface, port):
 
 def client(hostname, port):
     """UDP client."""
-    pass
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    hostname = sys.argv[2]
+    sock.connect((hostname, port))
+    print('Client socket name is {}'.format(sock.getsockname()))
+
+    delay = 0.1  # seconds
+    text = 'This is another message'
+    data = text.encode('ascii')
+    while True:
+        sock.send(data)
+        print('Waiting up to {} seconds for a reply'.format(delay))
+        sock.settimeout(delay)
+        try:
+            data = sock.recv(MAX_BYTES)
+        except socket.timeout:
+            delay *= 2  # wait even longer for the next request
+            if delay > 2.0:
+                raise RuntimeError("I think the server is down")
+        else:
+            break  # we are done, and can stop looping
 
 if __name__ == "__main__":
     choices = {"client": client, "server": server}

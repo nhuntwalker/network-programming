@@ -83,7 +83,10 @@ celerybeat-schedule
 .venv
 venv/
 ENV/
-*/geo_env
+*/geo_env/bin
+*/geo_env/share
+*/geo_env/pip-selfcheck.json
+*/geo_env/pyvenv.cfg
 
 # Spyder project settings
 .spyderproject

@@ -87,6 +87,11 @@ ENV/
 */geo_env/share
 */geo_env/pip-selfcheck.json
 */geo_env/pyvenv.cfg
+*/bin
+*/lib
+*/include
+*/pip-selfcheck.json
+*/pyvenv.cfg
 
 # Spyder project settings
 .spyderproject

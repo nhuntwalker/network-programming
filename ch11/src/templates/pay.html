@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title%}Please log in{% endblock %}
+{% block body %}
+<form method="POST" action="/pay">
+    {% if complaint %}<span class="complaint">{{ complaint }}</span>{% endif %}
+    <label>User: <input type="text" name="username" value="{{ username }}"></label>
+    <label>Password: <input type="password" name="password"></label>
+</form>
+{% endblock %}

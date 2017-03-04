@@ -92,6 +92,7 @@ ENV/
 */include
 */pip-selfcheck.json
 */pyvenv.cfg
+*/share
 
 # Spyder project settings
 .spyderproject
